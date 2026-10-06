@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-tema="claro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Currículo e portfólio de Enzo da Silva Passos - Desenvolvedor Full Stack especializado em React, TypeScript, PHP, Java e Bancos de Dados relacionais.">
+  <meta name="keywords" content="Enzo da Silva Passos, Desenvolvedor Full Stack, Web Developer, React, TypeScript, PHP, Laravel, Java, MySQL, PostgreSQL, Santos, Peruíbe">
+  <meta name="author" content="Enzo da Silva Passos">
+  
+  <title>Enzo da Silva Passos | Desenvolvedor Full Stack</title>
+
+  <!-- Google Fonts: Space Grotesk (Títulos) & JetBrains Mono (Dados e Tags) & Inter (Leitura) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600;700&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Barra Superior de Controle Brutalista -->
+  <header class="barra-navegacao">
+    <div class="conteiner barra-navegacao__conteudo">
+      <div class="logo-brutalista">
+        <span class="bloco-indicador"></span>
+        <span class="logo-texto">ENZO_PASSOS.DEV</span>
+      </div>
+
+      <nav class="menu-navegacao" aria-label="Navegação Principal">
+        <a href="#sobre" class="link-navegacao">SOBRE</a>
+        <a href="#experiencia" class="link-navegacao">EXPERIÊNCIA</a>
+        <a href="#habilidades" class="link-navegacao">STACK</a>
+        <a href="#projetos" class="link-navegacao">PROJETOS</a>
+        <a href="#contato" class="link-navegacao">CONTATO</a>
+      </nav>
+
+      <div class="controles-topo">
+        <button id="botao-imprimir" class="botao botao--secundario botao--compacto" title="Imprimir ou Salvar em PDF">
+          <span class="icone">🖨️</span> PDF
+        </button>
+        <button id="botao-alternar-tema" class="botao botao--destaque botao--compacto" aria-label="Alternar modo claro e escuro">
+          <span id="icone-tema">🌙</span> <span id="rotulo-tema">ESCURO</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="conteiner principal">
+    <!-- Seção Hero / Monólito Arquitetônico -->
+    <section class="secao-hero" id="topo">
+      <div class="hero__meta-topo">
+        <span class="hero__meta-item">
+          <span class="ponto-status"></span> STATUS: DISPONÍVEL PARA CONTRATAÇÃO
+        </span>
+        <span class="hero__meta-item">COORD: 24.32° S, 46.99° W [PERUÍBE, SP]</span>
+        <span class="hero__meta-item">DOC_REF: 0102 // ATLAS_DEV</span>
+      </div>
+
+      <div class="hero__corpo">
+        <h1 class="hero__titulo">
+          ENZO DA SILVA PASSOS
+        </h1>
+
+        <div class="hero__faixa-cargo">
+          <span class="tarja-cargo">DESENVOLVEDOR FULL STACK</span>
+          <span class="tarja-subtitulo">Sistemas Web • Sustentação de Software • APIs REST • Bancos de Dados</span>
+        </div>
+
+        <p class="hero__resumo">
+          Desenvolvedor Full Stack com sólida bagagem na criação e manutenção de sistemas governamentais e empresariais. Experiência de ponta a ponta: do desenvolvimento de interfaces responsivas em <strong>React, TypeScript e Tailwind</strong> até a construção de APIs e arquitetura de back-end em <strong>PHP (Laravel)</strong> e sustentação de sistemas legados em <strong>Java (Swing)</strong> com bancos <strong>MySQL e PostgreSQL</strong>.
+        </p>
+
+        <div class="hero__acoes">
+          <a href="#projetos" class="botao botao--destaque">VER PROJETOS EM DESTAQUE</a>
+          <a href="https://github.com/Enzopassos" target="_blank" rel="noopener noreferrer" class="botao botao--primario">GITHUB ↗</a>
+          <a href="https://www.linkedin.com/in/enzo-da-silva-passos-b7899b22a" target="_blank" rel="noopener noreferrer" class="botao botao--primario">LINKEDIN ↗</a>
+          <button id="botao-copiar-email-rapido" class="botao botao--secundario" data-email="enzodspassos@gmail.com">
+            COPIAR E-MAIL 📋
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Resumo e Destaques Rápidos -->
+    <section class="secao" id="sobre">
+      <div class="cabecalho-secao">
+        <div class="cabecalho-secao__conteudo">
+          <span class="cabecalho-secao__indice">01 //</span>
+          <h2 class="cabecalho-secao__titulo">PANORAMA GERAL</h2>
+        </div>
+        <span class="cabecalho-secao__registro">DOC_REF: 0102 // OVERVIEW</span>
+      </div>
+
+      <div class="grade-destaques">
+        <article class="cartao cartao--destaque">
+          <span class="cartao__rotulo">FORMAÇÃO ACADÊMICA</span>
+          <h3 class="cartao__titulo">Ciência da Computação</h3>
+          <p class="cartao__texto"><strong>Universidade Católica de Santos (UniSantos)</strong></p>
+          <p class="cartao__detalhe">8º Semestre em curso • Conclusão prevista: Julho / 2027</p>
+        </article>
+
+        <article class="cartao">
+          <span class="cartao__rotulo">LOCALIZAÇÃO & DISPONIBILIDADE</span>
+          <h3 class="cartao__titulo">Peruíbe & Baixada Santista, SP</h3>
+          <p class="cartao__texto">Disponível para atuação <strong>Remota</strong>, <strong>Híbrida</strong> ou <strong>Presencial</strong> na região.</p>
+        </article>
+
+        <article class="cartao">
+          <span class="cartao__rotulo">PERFIL DE ATUAÇÃO</span>
+          <h3 class="cartao__titulo">Autonomia & Trabalho em Equipe</h3>
+          <p class="cartao__texto">Experiência tanto em equipes colaborativas com múltiplos devs quanto liderando de forma autônoma a sustentação e banco de dados de empresas.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Seção Experiência Profissional -->
+    <section class="secao" id="experiencia">
+      <div class="cabecalho-secao">
+        <div class="cabecalho-secao__conteudo">
+          <span class="cabecalho-secao__indice">02 //</span>
+          <h2 class="cabecalho-secao__titulo">EXPERIÊNCIA PROFISSIONAL</h2>
+        </div>
+        <span class="cabecalho-secao__registro">DOC_REF: 0102 // TIMELINE</span>
+      </div>
+
+      <div class="lista-experiencias">
+        <!-- Experiência 1: Autoescola São João -->
+        <article class="cartao cartao--timeline">
+          <div class="cartao-timeline__cabecalho">
+            <div>
+              <span class="tag-status tag-status--atual">ATUALMENTE</span>
+              <h3 class="timeline__cargo">Estagiário de Desenvolvimento de Software</h3>
+              <h4 class="timeline__empresa">Autoescola São João • Peruíbe, SP</h4>
+            </div>
+            <div class="timeline__periodo">
+              <span>2026 — Presente</span>
+            </div>
+          </div>
+
+          <p class="timeline__descricao">
+            Atuação autônoma como único responsável técnico pelo setor de sistemas e infraestrutura de banco de dados da empresa.
+          </p>
+
+          <ul class="timeline__atividades">
+            <li><strong>Manutenção de Código Legado:</strong> Sustentação e correção de bugs em aplicação desktop corporativa desenvolvida em <strong>Java com interface gráfica Swing</strong>.</li>
+            <li><strong>Administração de Banco de Dados:</strong> Gerenciamento, manutenção estrutural, integridade e execução de rotinas no banco de dados local <strong>MySQL</strong>.</li>
+            <li><strong>Autonomia Técnica:</strong> Diagnóstico direto de incidentes de software e implementação de melhorias contínuas sem supervisão direta de TI.</li>
+          </ul>
+
+          <div class="grupo-tags">
+            <span class="tag">Java</span>
+            <span class="tag">Java Swing</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Software Legado</span>
+            <span class="tag">Resolução de Problemas</span>
+          </div>
+        </article>
+
+        <!-- Experiência 2: Prefeitura de Peruíbe -->
+        <article class="cartao cartao--timeline">
+          <div class="cartao-timeline__cabecalho">
+            <div>
+              <span class="tag-status">CONCLUÍDO</span>
+              <h3 class="timeline__cargo">Desenvolvedor Web / Full Stack</h3>
+              <h4 class="timeline__empresa">Prefeitura Municipal de Peruíbe • Peruíbe, SP</h4>
+            </div>
+            <div class="timeline__periodo">
+              <span>Março / 2025 — Outubro / 2026</span>
+            </div>
+          </div>
+
+          <p class="timeline__descricao">
+            Atuação em equipe multidisciplinar com outros 4 desenvolvedores na modernização e desenvolvimento de sistemas públicos municipais.
+          </p>
+
+          <ul class="timeline__atividades">
+            <li><strong>Sistemas Internos Governamentais:</strong> Engenharia e implementação de ferramentas e módulos web internos para os setores administrativos do município.</li>
+            <li><strong>Portais Públicos:</strong> Contribuição no desenvolvimento de portais para os departamentos de <strong>Turismo</strong> e <strong>Cultura</strong> da cidade de Peruíbe, entregando interfaces responsivas e acessíveis aos munícipes e turistas.</li>
+            <li><strong>APIs e Integrações:</strong> Construção e manutenção de endpoints REST em <strong>PHP</strong> para integração entre diferentes bases de dados e interfaces web.</li>
+            <li><strong>Colaboração Ágil:</strong> Alinhamento com metodologias de equipe, controle de versão e entrega contínua.</li>
+          </ul>
+
+          <div class="grupo-tags">
+            <span class="tag">PHP</span>
+            <span class="tag">Laravel</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">HTML5 / CSS3</span>
+            <span class="tag">APIs REST</span>
+            <span class="tag">Bancos de Dados</span>
+            <span class="tag">Equipe de 5 Devs</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Seção Stack Técnica e Habilidades -->
+    <section class="secao" id="habilidades">
+      <div class="cabecalho-secao">
+        <div class="cabecalho-secao__conteudo">
+          <span class="cabecalho-secao__indice">03 //</span>
+          <h2 class="cabecalho-secao__titulo">HABILIDADES & TECNOLOGIAS</h2>
+        </div>
+        <span class="cabecalho-secao__registro">DOC_REF: 0102 // STACK</span>
+      </div>
+
+      <!-- Filtro Interativo Brutalista -->
+      <div class="filtros-habilidades" role="tablist" aria-label="Filtrar competências">
+        <button class="botao-filtro botao-filtro--ativo" data-filtro="todos" role="tab" aria-selected="true">TODOS</button>
+        <button class="botao-filtro" data-filtro="frontend" role="tab" aria-selected="false">FRONT-END</button>
+        <button class="botao-filtro" data-filtro="backend" role="tab" aria-selected="false">BACK-END</button>
+        <button class="botao-filtro" data-filtro="dados" role="tab" aria-selected="false">DADOS & SQL</button>
+      </div>
+
+      <div class="grade-habilidades" id="grade-habilidades">
+        <!-- Front-end -->
+        <div class="item-habilidade" data-categoria="frontend">
+          <span class="item-habilidade__nome">React</span>
+          <span class="item-habilidade__tipo">FRONT-END</span>
+        </div>
+        <div class="item-habilidade" data-categoria="frontend">
+          <span class="item-habilidade__nome">TypeScript</span>
+          <span class="item-habilidade__tipo">FRONT-END</span>
+        </div>
+        <div class="item-habilidade" data-categoria="frontend">
+          <span class="item-habilidade__nome">JavaScript (ES6+)</span>
+          <span class="item-habilidade__tipo">FRONT-END</span>
+        </div>
+        <div class="item-habilidade" data-categoria="frontend">
+          <span class="item-habilidade__nome">Tailwind CSS</span>
+          <span class="item-habilidade__tipo">FRONT-END</span>
+        </div>
+        <div class="item-habilidade" data-categoria="frontend">
+          <span class="item-habilidade__nome">Bootstrap</span>
+          <span class="item-habilidade__tipo">FRONT-END</span>
+        </div>
+        <div class="item-habilidade" data-categoria="frontend">
+          <span class="item-habilidade__nome">HTML5 Semântico</span>
+          <span class="item-habilidade__tipo">FRONT-END</span>
+        </div>
+        <div class="item-habilidade" data-categoria="frontend">
+          <span class="item-habilidade__nome">CSS3 / Flex & Grid</span>
+          <span class="item-habilidade__tipo">FRONT-END</span>
+        </div>
+        <div class="item-habilidade" data-categoria="frontend">
+          <span class="item-habilidade__nome">React Native</span>
+          <span class="item-habilidade__tipo">MOBILE</span>
+        </div>
+
+        <!-- Back-end -->
+        <div class="item-habilidade" data-categoria="backend">
+          <span class="item-habilidade__nome">PHP</span>
+          <span class="item-habilidade__tipo">BACK-END</span>
+        </div>
+        <div class="item-habilidade" data-categoria="backend">
+          <span class="item-habilidade__nome">Laravel</span>
+          <span class="item-habilidade__tipo">BACK-END</span>
+        </div>
+        <div class="item-habilidade" data-categoria="backend">
+          <span class="item-habilidade__nome">APIs REST</span>
+          <span class="item-habilidade__tipo">BACK-END</span>
+        </div>
+        <div class="item-habilidade" data-categoria="backend">
+          <span class="item-habilidade__nome">Java</span>
+          <span class="item-habilidade__tipo">BACK-END / DESKTOP</span>
+        </div>
+        <div class="item-habilidade" data-categoria="backend">
+          <span class="item-habilidade__nome">Java Swing</span>
+          <span class="item-habilidade__tipo">DESKTOP GUI</span>
+        </div>
+
+        <!-- Banco de Dados -->
+        <div class="item-habilidade" data-categoria="dados">
+          <span class="item-habilidade__nome">PostgreSQL</span>
+          <span class="item-habilidade__tipo">BANCO DE DADOS</span>
+        </div>
+        <div class="item-habilidade" data-categoria="dados">
+          <span class="item-habilidade__nome">MySQL</span>
+          <span class="item-habilidade__tipo">BANCO DE DADOS</span>
+        </div>
+        <div class="item-habilidade" data-categoria="dados">
+          <span class="item-habilidade__nome">SQL & Modelagem</span>
+          <span class="item-habilidade__tipo">BANCO DE DADOS</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Projetos em Destaque -->
+    <section class="secao" id="projetos">
+      <div class="cabecalho-secao">
+        <div class="cabecalho-secao__conteudo">
+          <span class="cabecalho-secao__indice">04 //</span>
+          <h2 class="cabecalho-secao__titulo">PROJETOS EM DESTAQUE</h2>
+        </div>
+        <span class="cabecalho-secao__registro">DOC_REF: 0102 // PROJECTS</span>
+      </div>
+
+      <p class="secao__subtexto">
+        Sistemas em produção, portais governamentais públicos e aplicações completas desenvolvidas.
+      </p>
+
+      <div class="grade-projetos">
+        <!-- Projeto 1: Portal de Turismo de Peruíbe -->
+        <article class="cartao cartao--projeto">
+          <div class="cartao-projeto__topo">
+            <span class="tag-status tag-status--atual">PORTAL PÚBLICO</span>
+            <span class="cartao-projeto__ano">Prefeitura de Peruíbe</span>
+          </div>
+          <h3 class="cartao-projeto__titulo">Portal do Turismo de Peruíbe</h3>
+          <p class="cartao-projeto__descricao">
+            Portal oficial de fomento ao turismo municipal. Desenvolvido para apresentar roteiros, atrativos turísticos, serviços e praias da cidade com total responsividade e alto desempenho. Acesso público sem necessidade de login.
+          </p>
+          <div class="grupo-tags">
+            <span class="tag">PHP</span>
+            <span class="tag">Laravel</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Bootstrap</span>
+            <span class="tag">HTML5 / CSS3</span>
+          </div>
+          <div class="cartao-projeto__links">
+            <a href="https://turismo.peruibe.sp.gov.br/" target="_blank" rel="noopener noreferrer" class="link-acao">Acessar Portal ↗</a>
+          </div>
+        </article>
+
+        <!-- Projeto 2: Portal da Cultura de Peruíbe -->
+        <article class="cartao cartao--projeto">
+          <div class="cartao-projeto__topo">
+            <span class="tag-status tag-status--atual">PORTAL PÚBLICO</span>
+            <span class="cartao-projeto__ano">Prefeitura de Peruíbe</span>
+          </div>
+          <h3 class="cartao-projeto__titulo">Portal da Cultura de Peruíbe</h3>
+          <p class="cartao-projeto__descricao">
+            Plataforma oficial do departamento de cultura municipal para publicação de agenda de eventos, editais culturais, patrimônio histórico e divulgação de projetos artísticos do município.
+          </p>
+          <div class="grupo-tags">
+            <span class="tag">PHP</span>
+            <span class="tag">Laravel</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Bootstrap</span>
+            <span class="tag">HTML5 / CSS3</span>
+          </div>
+          <div class="cartao-projeto__links">
+            <a href="https://cultura.peruibe.sp.gov.br/" target="_blank" rel="noopener noreferrer" class="link-acao">Acessar Portal ↗</a>
+          </div>
+        </article>
+
+        <!-- Projeto 3: Controle Financeiro Passos -->
+        <article class="cartao cartao--projeto">
+          <div class="cartao-projeto__topo">
+            <span class="tag-status tag-status--destaque">FULL STACK / SPA</span>
+            <span class="cartao-projeto__ano">Projeto Autoral</span>
+          </div>
+          <h3 class="cartao-projeto__titulo">Controle Financeiro Passos</h3>
+          <p class="cartao-projeto__descricao">
+            Aplicação web com autenticação de usuários (cadastro e login). Gestão completa de transações com categorização, projeção de despesas futuras e dashboard interativo com gráficos e relatórios analíticos de fluxo de caixa.
+          </p>
+          <div class="grupo-tags">
+            <span class="tag">React</span>
+            <span class="tag">Vite</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Autenticação</span>
+            <span class="tag">Gráficos & Dashboards</span>
+          </div>
+          <div class="cartao-projeto__links">
+            <a href="https://controle-financeiro-passos.vercel.app/login" target="_blank" rel="noopener noreferrer" class="link-acao">Ver Demonstração ↗</a>
+          </div>
+        </article>
+
+        <!-- Projeto 4: Agendamento Gabriela Passos -->
+        <article class="cartao cartao--projeto">
+          <div class="cartao-projeto__topo">
+            <span class="tag-status tag-status--destaque">WEB / PRODUTO</span>
+            <span class="cartao-projeto__ano">Projeto Autoral</span>
+          </div>
+          <h3 class="cartao-projeto__titulo">Agendamento de Maquiagem</h3>
+          <p class="cartao-projeto__descricao">
+            Catálogo interativo com procedimentos estéticos e serviços de maquiagem. O cliente seleciona os procedimentos desejados, insere dados do atendimento e o sistema gera e encaminha um pedido com mensagem estruturada diretamente para o WhatsApp da profissional.
+          </p>
+          <div class="grupo-tags">
+            <span class="tag">React</span>
+            <span class="tag">Vite</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Integração WhatsApp</span>
+            <span class="tag">UX / Catálogo</span>
+          </div>
+          <div class="cartao-projeto__links">
+            <a href="https://agendamento-gabriela-passos.vercel.app" target="_blank" rel="noopener noreferrer" class="link-acao">Ver Aplicação ↗</a>
+          </div>
+        </article>
+
+        <!-- Projeto 5: Módulo de Gestão Legado (Autoescola São João) -->
+        <article class="cartao cartao--projeto">
+          <div class="cartao-projeto__topo">
+            <span class="tag-status">DESKTOP CORPORATIVO</span>
+            <span class="cartao-projeto__ano">Autoescola São João</span>
+          </div>
+          <h3 class="cartao-projeto__titulo">Sustentação & Banco Local</h3>
+          <p class="cartao-projeto__descricao">
+            Manutenção preventiva e corretiva em sistema desktop legado corporativo com interface gráfica rica, refatoração de rotinas críticas e otimização de consultas e modelagem de banco de dados relacional MySQL.
+          </p>
+          <div class="grupo-tags">
+            <span class="tag">Java</span>
+            <span class="tag">Java Swing</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">SQL Relacional</span>
+            <span class="tag">Software Legado</span>
+          </div>
+          <div class="cartao-projeto__links">
+            <span class="link-desabilitado">Sistema Interno Corporativo</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Seção de Contato -->
+    <section class="secao" id="contato">
+      <div class="cabecalho-secao">
+        <div class="cabecalho-secao__conteudo">
+          <span class="cabecalho-secao__indice">05 //</span>
+          <h2 class="cabecalho-secao__titulo">VAMOS CONVERSAR?</h2>
+        </div>
+        <span class="cabecalho-secao__registro">DOC_REF: 0102 // CONTACT</span>
+      </div>
+
+      <div class="cartao cartao--contato-destaque">
+        <div class="contato__info">
+          <h3 class="contato__chamada">Interessado em colaborar ou contratar?</h3>
+          <p class="contato__texto">
+            Estou disponível para vagas de desenvolvedor Full Stack, Frontend ou Backend, além de projetos e estágios avançados.
+          </p>
+        </div>
+
+        <div class="grade-contatos">
+          <div class="item-contato">
+            <span class="item-contato__tipo">E-MAIL</span>
+            <button class="botao-copiar" id="botao-copiar-email" data-conteudo="enzodspassos@gmail.com">
+              <span class="texto-valor">enzodspassos@gmail.com</span>
+              <span class="icone-copiar">📋 COPIAR</span>
+            </button>
+          </div>
+
+          <div class="item-contato">
+            <span class="item-contato__tipo">LINKEDIN</span>
+            <a href="https://www.linkedin.com/in/enzo-da-silva-passos-b7899b22a" target="_blank" rel="noopener noreferrer" class="link-contato-externo" id="link-linkedin">
+              <span class="texto-valor">linkedin.com/in/enzo-da-silva-passos</span>
+              <span class="icone-copiar">ACESSAR ↗</span>
+            </a>
+          </div>
+
+          <div class="item-contato">
+            <span class="item-contato__tipo">GITHUB</span>
+            <a href="https://github.com/Enzopassos" target="_blank" rel="noopener noreferrer" class="link-contato-externo" id="link-github">
+              <span class="texto-valor">github.com/Enzopassos</span>
+              <span class="icone-copiar">ACESSAR ↗</span>
+            </a>
+          </div>
+
+          <div class="item-contato">
+            <span class="item-contato__tipo">LOCALIZAÇÃO</span>
+            <div class="item-contato__estatico">
+              <span class="texto-valor">Peruíbe & Santos — SP, Brasil</span>
+              <span class="icone-copiar">📍 GMT-3</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé Brutalista -->
+  <footer class="rodape">
+    <div class="conteiner rodape__conteudo">
+      <div class="rodape__creditos">
+        <div class="barra-codigo-decorativa" aria-hidden="true">
+          <span style="width: 2px;"></span>
+          <span style="width: 4px;"></span>
+          <span style="width: 1px;"></span>
+          <span style="width: 3px;"></span>
+          <span style="width: 5px;"></span>
+          <span style="width: 2px;"></span>
+          <span style="width: 1px;"></span>
+          <span style="width: 4px;"></span>
+          <span style="width: 2px;"></span>
+          <span style="width: 6px;"></span>
+          <span style="width: 1px;"></span>
+          <span style="width: 3px;"></span>
+          <span style="width: 2px;"></span>
+          <span style="width: 5px;"></span>
+          <span style="width: 1px;"></span>
+          <span style="width: 4px;"></span>
+          <span style="width: 2px;"></span>
+          <span style="width: 3px;"></span>
+          <span style="width: 1px;"></span>
+          <span style="width: 4px;"></span>
+        </div>
+        <p style="margin-top: 0.6rem;"><strong>ENZO DA SILVA PASSOS</strong> — DESENVOLVEDOR FULL STACK © 2026</p>
+        <p class="rodape__subtexto">DOC_SPEC: BRUTALIST ARCHITECTURE // PHAIDON & BAUHAUS 0102 GRID</p>
+      </div>
+      <a href="#topo" class="botao botao--secundario botao--compacto">VOLTAR AO TOPO ↑</a>
+    </div>
+  </footer>
+
+  <!-- Notificação Flutuante de Cópia (Toast) -->
+  <aside id="aviso-flutuante" class="aviso-flutuante" aria-live="polite" hidden>
+    E-mail copiado para a área de transferência!
+  </aside>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

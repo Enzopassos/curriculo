@@ -1,0 +1,946 @@
+/* ==========================================================================
+   ARQUITETURA BRUTALISTA & EDITORIAL CONSTRUTIVISTA
+   Inspirado no Atlas of Brutalist Architecture (Phaidon) e Design Suíço/Bauhaus
+   Desenvolvedor: Enzo da Silva Passos
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Tokens de Design Arquitetônico
+   -------------------------------------------------------------------------- */
+:root {
+  /* Paleta: Concreto Cru & Laranja Internacional */
+  --cor-fundo: #ECEAE4;              /* Concreto aparente / papel cru */
+  --cor-superficie: #F8F7F4;          /* Painel monolítico claro */
+  --cor-superficie-alt: #DFDCD5;      /* Concreto secundário */
+  --cor-borda: #121212;              /* Preto carvão estrutural */
+  --cor-texto: #121212;              /* Tipografia principal */
+  --cor-texto-mutado: #525255;       /* Cinza técnico */
+  --cor-destaque: #FF3B00;           /* Laranja Internacional Arquitetônico */
+  --cor-destaque-contraste: #FFFFFF;
+  --cor-etiqueta: #E0DDD6;
+  --cor-sucesso: #121212;            /* Status sóbrio */
+  
+  /* Linhas e Estruturas Geométricas */
+  --espessura-linha: 1.5px;
+  --linha-forte: 2.5px;
+  
+  /* Tipografia Estrutural */
+  --fonte-titulo: 'Space Grotesk', -apple-system, sans-serif;
+  --fonte-mono: 'JetBrains Mono', monospace;
+  --fonte-texto: 'Inter', -apple-system, sans-serif;
+  
+  --transicao-direta: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  --largura-maxima: 1100px;
+}
+
+[data-tema="escuro"] {
+  /* Paleta: Ardósia Escura & Monólito Grafite */
+  --cor-fundo: #141416;
+  --cor-superficie: #1E1E22;
+  --cor-superficie-alt: #27272D;
+  --cor-borda: #404048;
+  --cor-texto: #F2F1ED;
+  --cor-texto-mutado: #9B9BA2;
+  --cor-destaque: #FF3B00;
+  --cor-destaque-contraste: #FFFFFF;
+  --cor-etiqueta: #27272D;
+  --cor-sucesso: #FFFFFF;
+}
+
+/* --------------------------------------------------------------------------
+   2. Reset e Base Estrutural
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  font-family: var(--fonte-texto);
+  line-height: 1.6;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  /* Fundo arquitetônico limpo e sóbrio (sem bolinhas/pontilhados) */
+  background-image: none;
+}
+
+::selection {
+  background-color: var(--cor-destaque);
+  color: #FFFFFF;
+}
+
+/* --------------------------------------------------------------------------
+   3. Grid e Layout Editorial
+   -------------------------------------------------------------------------- */
+.conteiner {
+  width: 100%;
+  max-width: var(--largura-maxima);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.principal {
+  padding-top: 2.5rem;
+  padding-bottom: 5rem;
+}
+
+.secao {
+  margin-top: 4.5rem;
+}
+
+/* Cabeçalho de Seção Estilo Prancha Técnica */
+.cabecalho-secao {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: var(--linha-forte) solid var(--cor-borda);
+  border-bottom: var(--espessura-linha) solid var(--cor-borda);
+  padding: 0.85rem 0;
+  margin-bottom: 2rem;
+}
+
+.cabecalho-secao__conteudo {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.cabecalho-secao__indice {
+  font-family: var(--fonte-mono);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--cor-destaque);
+  letter-spacing: 0.05em;
+}
+
+.cabecalho-secao__titulo {
+  font-family: var(--fonte-titulo);
+  font-size: 1.85rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.cabecalho-secao__registro {
+  font-family: var(--fonte-mono);
+  font-size: 0.75rem;
+  color: var(--cor-texto-mutado);
+  text-transform: uppercase;
+}
+
+.secao__subtexto {
+  font-family: var(--fonte-mono);
+  font-size: 0.9rem;
+  color: var(--cor-texto-mutado);
+  margin-bottom: 2rem;
+}
+
+/* --------------------------------------------------------------------------
+   4. Barra de Navegação Arquitetônica
+   -------------------------------------------------------------------------- */
+.barra-navegacao {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--cor-fundo);
+  border-bottom: var(--linha-forte) solid var(--cor-borda);
+}
+
+.barra-navegacao__conteudo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  gap: 1rem;
+}
+
+.logo-brutalista {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--fonte-mono);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.bloco-indicador {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: var(--cor-destaque);
+  border: 1.5px solid var(--cor-borda);
+}
+
+.menu-navegacao {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.link-navegacao {
+  font-family: var(--fonte-mono);
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: var(--cor-texto);
+  text-decoration: none;
+  padding: 0.35rem 0.65rem;
+  border: 1px solid transparent;
+  transition: var(--transicao-direta);
+}
+
+.link-navegacao:hover {
+  background-color: var(--cor-borda);
+  color: var(--cor-fundo);
+}
+
+.controles-topo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   5. Botões Monolíticos e Precisos
+   -------------------------------------------------------------------------- */
+.botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--fonte-mono);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--cor-texto);
+  background-color: var(--cor-superficie);
+  border: var(--espessura-linha) solid var(--cor-borda);
+  padding: 0.7rem 1.3rem;
+  cursor: pointer;
+  border-radius: 0;
+  transition: var(--transicao-direta);
+  user-select: none;
+}
+
+.botao:hover {
+  background-color: var(--cor-borda);
+  color: var(--cor-superficie);
+}
+
+.botao:active {
+  background-color: var(--cor-destaque);
+  color: #FFFFFF;
+}
+
+/* Botão em Laranja Internacional (Phaidon Accent) */
+.botao--destaque {
+  background-color: var(--cor-destaque);
+  color: #FFFFFF;
+  border-color: var(--cor-borda);
+}
+
+.botao--destaque:hover {
+  background-color: var(--cor-borda);
+  color: #FFFFFF;
+}
+
+.botao--primario {
+  background-color: var(--cor-superficie);
+  color: var(--cor-texto);
+}
+
+.botao--secundario {
+  background-color: transparent;
+  border-color: var(--cor-borda);
+}
+
+.botao--compacto {
+  padding: 0.35rem 0.75rem;
+  font-size: 0.75rem;
+}
+
+/* --------------------------------------------------------------------------
+   6. Seção Hero (Monólito Arquitetônico)
+   -------------------------------------------------------------------------- */
+.secao-hero {
+  border: var(--linha-forte) solid var(--cor-borda);
+  background-color: var(--cor-superficie);
+  padding: 0;
+  position: relative;
+}
+
+/* Faixa Técnica Superior Estilo Prancha */
+.hero__meta-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  border-bottom: var(--espessura-linha) solid var(--cor-borda);
+  padding: 0.65rem 1.75rem;
+  background-color: var(--cor-superficie-alt);
+  font-family: var(--fonte-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--cor-texto-mutado);
+}
+
+.hero__meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.ponto-status {
+  width: 7px;
+  height: 7px;
+  border-radius: 0; /* Brutalista reto */
+  display: inline-block;
+  background-color: var(--cor-destaque);
+}
+
+.hero__corpo {
+  padding: 3rem 2.5rem;
+}
+
+.hero__titulo {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(2.5rem, 6.5vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+  color: var(--cor-texto);
+}
+
+.hero__faixa-cargo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.tarja-cargo {
+  font-family: var(--fonte-mono);
+  font-weight: 700;
+  font-size: 1rem;
+  background-color: var(--cor-borda);
+  color: var(--cor-fundo);
+  padding: 0.35rem 0.75rem;
+}
+
+[data-tema="escuro"] .tarja-cargo {
+  background-color: var(--cor-destaque);
+  color: #FFFFFF;
+}
+
+.tarja-subtitulo {
+  font-family: var(--fonte-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--cor-texto-mutado);
+}
+
+.hero__resumo {
+  font-size: 1.15rem;
+  line-height: 1.75;
+  max-width: 860px;
+  margin-bottom: 2.5rem;
+  color: var(--cor-texto);
+}
+
+.hero__resumo strong {
+  color: var(--cor-texto);
+  border-bottom: 2px solid var(--cor-destaque);
+  font-weight: 600;
+}
+
+.hero__acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* --------------------------------------------------------------------------
+   7. Cards e Blocos de Concreto
+   -------------------------------------------------------------------------- */
+.cartao {
+  background-color: var(--cor-superficie);
+  border: var(--espessura-linha) solid var(--cor-borda);
+  padding: 1.75rem;
+  border-radius: 0;
+  transition: var(--transicao-direta);
+  position: relative;
+}
+
+.cartao:hover {
+  border-color: var(--cor-borda);
+  background-color: var(--cor-superficie-alt);
+}
+
+/* Destaque com bloco lateral sutil */
+.cartao--destaque {
+  border-left: 6px solid var(--cor-destaque);
+}
+
+.grade-destaques {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.25rem;
+}
+
+.cartao__rotulo {
+  display: inline-block;
+  font-family: var(--fonte-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--cor-destaque);
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.05em;
+}
+
+.cartao__titulo {
+  font-family: var(--fonte-titulo);
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.cartao__texto {
+  font-size: 0.95rem;
+  color: var(--cor-texto);
+}
+
+.cartao__detalhe {
+  margin-top: 0.75rem;
+  padding-top: 0.5rem;
+  border-top: 1px dashed var(--cor-borda);
+  font-family: var(--fonte-mono);
+  font-size: 0.8rem;
+  color: var(--cor-texto-mutado);
+}
+
+/* --------------------------------------------------------------------------
+   8. Linha do Tempo / Experiências (Pranchas Modulares)
+   -------------------------------------------------------------------------- */
+.lista-experiencias {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.cartao--timeline {
+  padding: 2.25rem;
+}
+
+.cartao-timeline__cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+  border-bottom: 1px dashed var(--cor-borda);
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.timeline__cargo {
+  font-family: var(--fonte-titulo);
+  font-size: 1.45rem;
+  font-weight: 800;
+  margin-top: 0.25rem;
+  text-transform: uppercase;
+}
+
+.timeline__empresa {
+  font-family: var(--fonte-mono);
+  font-size: 0.95rem;
+  color: var(--cor-texto-mutado);
+  font-weight: 600;
+}
+
+.timeline__periodo {
+  font-family: var(--fonte-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  background-color: var(--cor-superficie-alt);
+  border: 1px solid var(--cor-borda);
+  padding: 0.3rem 0.65rem;
+  white-space: nowrap;
+}
+
+.timeline__descricao {
+  font-size: 1.05rem;
+  font-weight: 500;
+  margin-bottom: 1.25rem;
+}
+
+.timeline__atividades {
+  list-style: none;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.timeline__atividades li {
+  position: relative;
+  padding-left: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.timeline__atividades li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--cor-destaque);
+  font-weight: 700;
+  font-family: var(--fonte-mono);
+}
+
+/* --------------------------------------------------------------------------
+   9. Tags e Selos Arquitetônicos
+   -------------------------------------------------------------------------- */
+.grupo-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tag {
+  font-family: var(--fonte-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  background-color: transparent;
+  color: var(--cor-texto);
+  border: 1px solid var(--cor-borda);
+  padding: 0.2rem 0.55rem;
+  border-radius: 0;
+  transition: var(--transicao-direta);
+}
+
+.tag:hover {
+  background-color: var(--cor-borda);
+  color: var(--cor-superficie);
+}
+
+.tag-status {
+  font-family: var(--fonte-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-color: var(--cor-superficie-alt);
+  border: 1px solid var(--cor-borda);
+  padding: 0.2rem 0.5rem;
+  display: inline-block;
+  margin-bottom: 0.4rem;
+}
+
+.tag-status--atual {
+  background-color: var(--cor-destaque);
+  color: #FFFFFF;
+  border-color: var(--cor-destaque);
+}
+
+.tag-status--destaque {
+  background-color: var(--cor-borda);
+  color: var(--cor-fundo);
+}
+
+[data-tema="escuro"] .tag-status--destaque {
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+/* --------------------------------------------------------------------------
+   10. Filtros e Grade de Habilidades (Arquitetura Modular)
+   -------------------------------------------------------------------------- */
+.filtros-habilidades {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.botao-filtro {
+  font-family: var(--fonte-mono);
+  font-weight: 700;
+  font-size: 0.8rem;
+  background-color: var(--cor-superficie);
+  color: var(--cor-texto);
+  border: var(--espessura-linha) solid var(--cor-borda);
+  padding: 0.45rem 1rem;
+  cursor: pointer;
+  border-radius: 0;
+  transition: var(--transicao-direta);
+}
+
+.botao-filtro:hover {
+  background-color: var(--cor-superficie-alt);
+}
+
+.botao-filtro--ativo {
+  background-color: var(--cor-borda);
+  color: var(--cor-fundo);
+}
+
+[data-tema="escuro"] .botao-filtro--ativo {
+  background-color: var(--cor-destaque);
+  color: #FFFFFF;
+  border-color: var(--cor-destaque);
+}
+
+.grade-habilidades {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 1rem;
+}
+
+.item-habilidade {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--cor-superficie);
+  border: var(--espessura-linha) solid var(--cor-borda);
+  padding: 1.1rem 1.25rem;
+  transition: var(--transicao-direta);
+}
+
+.item-habilidade:hover {
+  background-color: var(--cor-superficie-alt);
+  border-color: var(--cor-destaque);
+}
+
+.item-habilidade__nome {
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+}
+
+.item-habilidade__tipo {
+  font-family: var(--fonte-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--cor-texto-mutado);
+  letter-spacing: 0.05em;
+}
+
+.item-habilidade.oculto {
+  display: none;
+}
+
+/* --------------------------------------------------------------------------
+   11. Seção de Projetos (Fichas Técnicas / Catálogo Editorial)
+   -------------------------------------------------------------------------- */
+.grade-projetos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.cartao--projeto {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cartao-projeto__topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.cartao-projeto__ano {
+  font-family: var(--fonte-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--cor-texto-mutado);
+}
+
+.cartao-projeto__titulo {
+  font-family: var(--fonte-titulo);
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+}
+
+.cartao-projeto__descricao {
+  font-size: 0.95rem;
+  color: var(--cor-texto);
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.cartao-projeto__links {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--cor-borda);
+  display: flex;
+  gap: 0.75rem;
+}
+
+.link-acao {
+  font-family: var(--fonte-mono);
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-decoration: none;
+  background-color: var(--cor-borda);
+  color: var(--cor-fundo);
+  border: 1px solid var(--cor-borda);
+  padding: 0.4rem 0.85rem;
+  transition: var(--transicao-direta);
+}
+
+.link-acao:hover {
+  background-color: var(--cor-destaque);
+  border-color: var(--cor-destaque);
+  color: #FFFFFF;
+}
+
+.link-desabilitado {
+  font-family: var(--fonte-mono);
+  font-size: 0.75rem;
+  color: var(--cor-texto-mutado);
+  font-style: italic;
+  padding-top: 0.2rem;
+}
+
+/* --------------------------------------------------------------------------
+   12. Seção de Contato e Dossiê Final
+   -------------------------------------------------------------------------- */
+.cartao--contato-destaque {
+  background-color: var(--cor-superficie);
+  border: var(--linha-forte) solid var(--cor-borda);
+  padding: 2.5rem;
+}
+
+.contato__info {
+  margin-bottom: 2rem;
+}
+
+.contato__chamada {
+  font-family: var(--fonte-titulo);
+  font-size: 1.85rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.contato__texto {
+  font-size: 1.05rem;
+  color: var(--cor-texto);
+}
+
+.grade-contatos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.25rem;
+}
+
+.item-contato {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.item-contato__tipo {
+  font-family: var(--fonte-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--cor-destaque);
+}
+
+.botao-copiar, .link-contato-externo, .item-contato__estatico {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: var(--cor-superficie-alt);
+  border: var(--espessura-linha) solid var(--cor-borda);
+  color: var(--cor-texto);
+  font-family: var(--fonte-mono);
+  font-size: 0.85rem;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 0;
+  transition: var(--transicao-direta);
+}
+
+.botao-copiar:hover, .link-contato-externo:hover {
+  background-color: var(--cor-borda);
+  color: var(--cor-fundo);
+}
+
+.icone-copiar {
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+
+/* --------------------------------------------------------------------------
+   13. Elemento Decorativo: Código de Barras Vetorial (Referência 0102)
+   -------------------------------------------------------------------------- */
+.barra-codigo-decorativa {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 28px;
+  opacity: 0.8;
+}
+
+.barra-codigo-decorativa span {
+  background-color: var(--cor-borda);
+  height: 100%;
+  display: inline-block;
+}
+
+/* --------------------------------------------------------------------------
+   14. Rodapé Arquitetônico
+   -------------------------------------------------------------------------- */
+.rodape {
+  margin-top: 5rem;
+  border-top: var(--linha-forte) solid var(--cor-borda);
+  background-color: var(--cor-superficie);
+  padding: 2.5rem 0;
+}
+
+.rodape__conteudo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.rodape__creditos {
+  font-family: var(--fonte-mono);
+  font-size: 0.85rem;
+}
+
+.rodape__subtexto {
+  font-size: 0.75rem;
+  color: var(--cor-texto-mutado);
+  margin-top: 0.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   15. Toast e Feedback
+   -------------------------------------------------------------------------- */
+.aviso-flutuante {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: var(--cor-borda);
+  color: var(--cor-fundo);
+  font-family: var(--fonte-mono);
+  font-weight: 700;
+  font-size: 0.85rem;
+  border: 1px solid var(--cor-borda);
+  padding: 0.85rem 1.5rem;
+  z-index: 999;
+  border-radius: 0;
+}
+
+[data-tema="escuro"] .aviso-flutuante {
+  background-color: var(--cor-destaque);
+  color: #FFFFFF;
+}
+
+/* --------------------------------------------------------------------------
+   16. Responsividade
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .conteiner {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .barra-navegacao__conteudo {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .menu-navegacao {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+
+  .controles-topo {
+    justify-content: center;
+  }
+
+  .hero__corpo {
+    padding: 2rem 1.5rem;
+  }
+
+  .hero__acoes {
+    flex-direction: column;
+  }
+
+  .hero__acoes .botao {
+    width: 100%;
+  }
+
+  .cartao-timeline__cabecalho {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   17. Regras de Impressão (A4 / Exportação de Prancha em PDF)
+   -------------------------------------------------------------------------- */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 10.5pt;
+  }
+
+  .barra-navegacao,
+  .controles-topo,
+  .filtros-habilidades,
+  .hero__acoes,
+  .cartao-projeto__links,
+  .rodape,
+  .aviso-flutuante {
+    display: none !important;
+  }
+
+  .principal {
+    padding: 0 !important;
+  }
+
+  .secao {
+    margin-top: 1.5rem !important;
+    page-break-inside: avoid;
+  }
+
+  .secao-hero,
+  .cartao {
+    border: 1px solid #111111 !important;
+    padding: 1rem !important;
+  }
+
+  .hero__titulo {
+    font-size: 24pt !important;
+  }
+}
