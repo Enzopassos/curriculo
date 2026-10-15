@@ -17,7 +17,6 @@ function inicializarAplicacao() {
   configurarAlternadorDeTema();
   configurarFiltroDeHabilidades();
   configurarCopiaDeContato();
-  configurarBotaoImprimir();
 }
 
 /**
@@ -174,14 +173,3 @@ function configurarCopiaDeContato() {
   }
 }
 
-/**
- * Aciona a caixa de diálogo de impressão nativa do navegador para salvar em PDF.
- */
-function configurarBotaoImprimir() {
-  const botaoImprimir = document.getElementById('botao-imprimir');
-  if (botaoImprimir) {
-    botaoImprimir.addEventListener('click', () => {
-      window.print();
-    });
-  }
-}

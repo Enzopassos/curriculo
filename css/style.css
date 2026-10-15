@@ -302,12 +302,34 @@ body {
   gap: 0.4rem;
 }
 
+.hero__meta-item--disponivel {
+  color: var(--cor-texto);
+  font-weight: 700;
+}
+
 .ponto-status {
-  width: 7px;
-  height: 7px;
-  border-radius: 0; /* Brutalista reto */
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
   display: inline-block;
-  background-color: var(--cor-destaque);
+  background-color: #10B981;
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  animation: pulso-status 2s infinite;
+}
+
+@keyframes pulso-status {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
 }
 
 .hero__corpo {
@@ -547,13 +569,13 @@ body {
   border: 1px solid var(--cor-borda);
   padding: 0.2rem 0.5rem;
   display: inline-block;
-  margin-bottom: 0.4rem;
+  white-space: nowrap;
 }
 
 .tag-status--atual {
-  background-color: var(--cor-destaque);
+  background-color: #059669;
   color: #FFFFFF;
-  border-color: var(--cor-destaque);
+  border-color: #047857;
 }
 
 .tag-status--destaque {
@@ -663,7 +685,15 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 0.75rem;
   margin-bottom: 0.75rem;
+  width: 100%;
+}
+
+.cartao-projeto__topo .tag-status {
+  margin-bottom: 0;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .cartao-projeto__ano {
@@ -671,6 +701,9 @@ body {
   font-size: 0.8rem;
   font-weight: 600;
   color: var(--cor-texto-mutado);
+  margin-left: auto;
+  text-align: right;
+  white-space: nowrap;
 }
 
 .cartao-projeto__titulo {
@@ -789,9 +822,17 @@ body {
   color: var(--cor-fundo);
 }
 
+.texto-valor {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .icone-copiar {
   font-weight: 700;
   font-size: 0.75rem;
+  flex-shrink: 0;
+  margin-left: 0.5rem;
 }
 
 /* --------------------------------------------------------------------------
